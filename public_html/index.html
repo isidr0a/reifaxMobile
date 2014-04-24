@@ -1,350 +1,403 @@
 <!DOCTYPE HTML>
 <html>
+<link rel="stylesheet" href="includes/js/lib/jqueryMobile/jquery.mobile-1.4.2.min.css" type="text/css" media="screen">
+<script type="text/javascript" src="includes/js/lib/jqueryMobile/demos/js/jquery.js"></script>
+<script type="text/javascript" src="includes/js/lib/jqueryMobile/jquery.mobile-1.4.2.min.js"></script>
+<script type="text/javascript" src="resources/js/login.js"></script>
 <!-- Head of ReiFax Website -->
 <style>
-	.contentBody	{
-		width:1020px;
-		margin:0 auto;
+	.contentPrincipal	{
+		padding: 0px;
 	}
-	.panel {
-		background-color: #FFFFFF;
-		border: thin solid #DDDDDD;
-		box-shadow: 2px 3px 3px #DDDDDD;
-		height: 105px;
-		overflow: hidden;
-		padding: 4px;
-		width:234px;
-		display: inline-block;
+	h3.ui-bar-a	{
+		margin: 1px 0;
 	}
-	.panelMyProducts img	{
-		width:100%;
-		margin: 10px 0 0;
+	.ui-body-noPadding	{
+		padding: 0;
 	}
-	.clear {
-		clear: both !important;
-		height: 1px !important;
+	img	{
+		height: 60px;
 	}
-	.headerProducts	{
-		background-color: #1A60BC;
-		color: #FFFFFF;
+	.iframeRender	{
+		width: 100%;
+		height:700px;
+		border: medium none rgba(0, 0, 0, 0);
 	}
-	.tableProducts	{
-		border-color: #1A60BC;
-		border-style: solid;
+	.excecute	{
+		margin:	0px;
+	}
+	.tails	{
+		height:80px;
+		padding:0px
+	}
+		
+	h1	{
+		align:center;
 	}
 </style>
+<script>
+	var globals	=	{
+		execFirstTime:	0,
+		globalFunction:	""
+	}
+</script>
 <body>
-	<div align="center" class="contentBody">
-		<table style="width:1020px;">
-			<tr align="center">
-				<td colspan="3"><img src="http://www.reifax.com/img/logoSinCasa.png" style="height: 30px;"></td>
-				<td><img src="//dbbharat.in/mrpcareer/logout.jpg" style="height: 30px;"></td>
-			</tr>
-			<tr>
-				<td colspan="2" style="width:50%;">
-					<table border="2" cellspacing="0" class="tableProducts">
-						<thead>
-							<tr>
-								<th class="headerProducts"><span>Products</span></th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>
-									<div class="panel">
-										<div class="center panelMyProducts">
-											<div>
-												<a href="http://professional.reifax.com">
-													<img src="http://www.reifax.com/img/Professional.png">
-												</a>
-											</div>
-											<div class="clear"> </div>
-										</div>
+	<div data-role="page" id="loginReifax">
+		<div data-role="header">
+			<h1 style="padding:0px;"><img src="img/logoSinCasa.png" style="height:50px;"></h1>
+		</div>
+		<div data-role="content">
+            <form id="check-user" class="ui-body ui-body-a ui-corner-all" data-ajax="false">
+                <fieldset>
+                    <div data-role="fieldcontain">
+                        <label for="username">Enter your username:</label>
+                        <input type="text" value="" name="loginEmail" id="username"/>
+                    </div>                                  
+                    <div data-role="fieldcontain">                                      
+                        <label for="password">Enter your password:</label>
+                        <input type="password" value="" name="loginPass" id="password"/> 
+                    </div>
+                    <input type="button" data-theme="b" name="submit" id="submit" value="Submit">
+                    <input type="button" data-theme="b" id="forgot" value="Forgot your PassWord" class="excecute" onclick="window.location.href='#renderHtml'"
+						data-excecute="forgotPassword" data-src="register/forgotPassword.php" data-title="FORGOT YOUR PASSWORD">
+                </fieldset>
+            </form>                              
+        </div>
+		<div id="both" data-role="popup" data-transition="slideup" data-theme="a" class="ui-content">
+			<p></p>
+		</div>
+        <div data-theme="a" data-role="footer" data-position="fixed">
+ 
+        </div>
+	</div>
+	
+	<div data-role="page" id="principalMenu">
+
+		<div data-role="header">
+			<h1 style="padding:0px;"><img src="img/logoSinCasa.png" style="height:50px;"></h1>
+		</div>
+
+		<div role="main" class="ui-content contentPrincipal">
+			<div>
+				<div class="ui-grid-a">
+					<div class="ui-block-a">
+						<!--h3 class="ui-bar ui-bar-a" align="center">Products</h3-->
+						<div class="ui-body ui-body-noPadding">
+							<div class="ui-grid-a">
+								<div class="ui-block-a">
+									<div class="ui-bar ui-bar-a tails">
+										<a class="excecute" data-excecute="professional" data-src="properties_search.php" data-title="REIFAX PROFESSIONAL" data-transition="slide" href="#renderWeb"><img src="img/mobile/logo_reifax.png"></a>
 									</div>
-									<div class="panel">
-										<div class="center panelMyProducts">
-											<div>
-												<a href="http://dealfinder.reifax.com">
-													<img src="http://www.reifax.com/img/homefinder.png">
-												</a>
-											</div>
-											<div class="clear"> </div>
-										</div>
+								</div>
+								<div class="ui-block-b">
+									<div class="ui-bar ui-bar-a tails">
+										<a class="excecute" data-excecute="testFunction" href="#renderWeb"><img src="img/mobile/home_deal.png"></a>
 									</div>
-									<div class="panel">
-										<div class="center panelMyProducts">
-											<div>
-												<a href="http://buyerspro.reifax.com">
-													<img src="http://www.reifax.com/img/buyerspro.png">
-												</a>
-											</div>
-											<div class="clear"> </div>
-										</div>
+								</div>
+								<div class="ui-block-a">
+									<div class="ui-bar ui-bar-a tails">
+										<a class="excecute" data-excecute="nothing"><img src="img/mobile/buyers_pro.png"></a>
 									</div>
-									<div class="panel">
-										<div class="center panelMyProducts">
-											<div>
-												<a href="http://leads.reifax.com">
-													<img src="http://www.reifax.com/img/leadsgenerator.png">
-												</a>
-											</div>
-											<div class="clear"> </div>
-										</div>
+								</div>
+								<div class="ui-block-b">
+									<div class="ui-bar ui-bar-a tails">
+										<a class="excecute" data-excecute="nothing"><img src="img/mobile/leads_gen.png"></a>
 									</div>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-				</td>
-				<td colspan="2">
-					<table border="2" cellspacing="0" class="tableProducts">
-						<thead>
-							<tr>
-								<th class="headerProducts"><span>Support</span></th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>
-									<div class="panel">
-										<div class="center panelMyProducts">
-											<div>
-												<a href="http://leads.reifax.com">
-													<img src="//www.southstreetstrategy.com/wp-content/uploads/2012/03/Webinar-Logo.jpg">
-												</a>
-											</div>
-											<div class="clear"> </div>
-										</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="ui-block-b">
+						<!--h3 class="ui-bar ui-bar-a" align="center">Support</h3-->
+						<div class="ui-body ui-body-noPadding">
+							<div class="ui-grid-a">
+								<div class="ui-block-a">
+									<div class="ui-bar ui-bar-a tails">
+										<a class="excecute" data-excecute="nothing"><img src="img/mobile/webinar.png"></a>
 									</div>
-									<div class="panel">
-										<div class="center panelMyProducts">
-											<div>
-												<a href="http://leads.reifax.com">
-													<img src="//1.cdn.nhle.com/penguins/images/upload/2011/10/3120I_TicketPlus-FINAL-Logo_-04.jpg">
-												</a>
-											</div>
-											<div class="clear"> </div>
-										</div>
+								</div>
+								<div class="ui-block-b">
+									<div class="ui-bar ui-bar-a tails">
+										<a class="excecute" data-excecute="nothing"><img src="img/mobile/tickets.png"></a>
 									</div>
-									<div class="panel">
-										<div class="center panelMyProducts">
-											<div>
-												<a href="http://leads.reifax.com">
-													<img src="//www.bluesquirrel.com/products/livesupport/LiveSupportLogo.gif">
-												</a>
-											</div>
-											<div class="clear"> </div>
-										</div>
+								</div>
+								<div class="ui-block-a">
+									<div class="ui-bar ui-bar-a tails">
+										<a class="excecute" data-excecute="nothing"><img src="img/mobile/live_support.png"></a>
 									</div>
-									<div class="panel">
-										<div class="center panelMyProducts">
-											<div>
-												<a href="http://leads.reifax.com">
-													<img src="//www.humidity.com/user_content/editor/themes/Nortec/help-logo_1314x574.png">
-												</a>
-											</div>
-											<div class="clear"> </div>
-										</div>
+								</div>
+								<div class="ui-block-b">
+									<div class="ui-bar ui-bar-a tails">
+										<a class="excecute" data-excecute="nothing"><img src="img/mobile/help.png"></a>
 									</div>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-				</td>
-			</tr>
-			<tr>
-				<td colspan="2" style="width:50%;">
-					<table border="2" cellspacing="0" class="tableProducts">
-						<thead>
-							<tr>
-								<th class="headerProducts"><span>My Account</span></th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>
-									<div class="panel">
-										<div class="center panelMyProducts">
-											<div>
-												<a href="http://professional.reifax.com">
-													<img src="//comps.canstockphoto.com/can-stock-photo_csp16893608.jpg">
-												</a>
-											</div>
-											<div class="clear"> </div>
-										</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="ui-block-a">
+						<!--h3 class="ui-bar ui-bar-a" align="center">My Account</h3-->
+						<div class="ui-body ui-body-noPadding">
+							<div class="ui-grid-a">
+								<div class="ui-block-a">
+									<div class="ui-bar ui-bar-a tails">
+										<a class="excecute" data-excecute="personalData" data-src="/settings/personalData.php" data-title="REIFAX - PERSONAL DATA" data-transition="slide" href="#renderHtml"><img src="img/mobile/personal_data.png"></a>
 									</div>
-									<div class="panel">
-										<div class="center panelMyProducts">
-											<div>
-												<a href="http://dealfinder.reifax.com">
-													<img src="//www.dancingtornado.com/logos/personal-profile-logo.gif">
-												</a>
-											</div>
-											<div class="clear"> </div>
-										</div>
+								</div>
+								<div class="ui-block-b">
+									<div class="ui-bar ui-bar-a tails">
+										<a class="excecute" data-excecute="personalProfile" data-src="/settings/profileData.php" data-title="REIFAX - PERSONAL PROFILE" data-transition="slide" href="#renderHtml"><img src="img/mobile/personal_profile.png"></a>
 									</div>
-									<div class="panel">
-										<div class="center panelMyProducts">
-											<div>
-												<a href="http://buyerspro.reifax.com">
-													<img src="//photos.prnewswire.com/prnvar/20090210/CCLOGO">
-												</a>
-											</div>
-											<div class="clear"> </div>
-										</div>
+								</div>
+								<div class="ui-block-a">
+									<div class="ui-bar ui-bar-a tails">
+										<a class="excecute" data-excecute="creditCard" data-src="/settings/creditCard.php" data-title="REIFAX - CREDIT CARD" data-transition="slide" href="#renderHtml"><img src="img/mobile/credit_card.png"></a>
 									</div>
-									<div class="panel">
-										<div class="center panelMyProducts">
-											<div>
-												<a href="http://leads.reifax.com">
-													<img src="//bancofotos.net/di/QQK6/1password-logo.png">
-												</a>
-											</div>
-											<div class="clear"> </div>
-										</div>
+								</div>
+								<div class="ui-block-b">
+									<div class="ui-bar ui-bar-a tails">
+										<a class="excecute" data-excecute="changePassword" data-src="/settings/changePassword.php" data-title="REIFAX - CHANGE PASSWORD" data-transition="slide" href="#renderHtml"><img src="img/mobile/password.png"></a>
 									</div>
-									<div class="panel">
-										<div class="center panelMyProducts">
-											<div>
-												<a href="http://buyerspro.reifax.com">
-													<img src="//savingcentbycent.com/wp-content/uploads/2013/10/Little-Statements-Logo-300x105.png">
-												</a>
-											</div>
-											<div class="clear"> </div>
-										</div>
+								</div>
+								<div class="ui-block-a">
+									<div class="ui-bar ui-bar-a tails">
+										<a class="excecute" data-excecute="nothing"><img src="img/mobile/statement.png"></a>
 									</div>
-									<div class="panel">
-										<div class="center panelMyProducts">
-											<div>
-												<a href="http://leads.reifax.com">
-													<img src="//cthockeyleague.com/CHL_2014/media/uploads/team_logos/chlfreezeLogo.gif">
-												</a>
-											</div>
-											<div class="clear"> </div>
-										</div>
+								</div>
+								<div class="ui-block-b">
+									<div class="ui-bar ui-bar-a tails">
+										<a class="excecute" data-excecute="freezeAccount" data-src="/settings/freezeAccount.php" data-title="REIFAX - FREEZE ACCOUNT" data-transition="slide" href="#renderHtml"><img src="img/mobile/freeze.png"></a>
 									</div>
-									<div class="panel">
-										<div class="center panelMyProducts">
-											<div>
-												<a href="http://buyerspro.reifax.com">
-													<img src="//comps.canstockphoto.com/can-stock-photo_csp9691802.jpg">
-												</a>
-											</div>
-											<div class="clear"> </div>
-										</div>
+								</div>
+								<div class="ui-block-a">
+									<div class="ui-bar ui-bar-a tails">
+										<a class="excecute" data-excecute="nothing"><img src="img/mobile/cancel.png"></a>
 									</div>
-									<div class="panel">
-										<div class="center panelMyProducts">
-											<div>
-												<a href="http://leads.reifax.com">
-													<img src="//www.designbyschultz.com/saraschultz/images/upgrade-logo-big.jpg">
-												</a>
-											</div>
-											<div class="clear"> </div>
-										</div>
+								</div>
+								<div class="ui-block-b">
+									<div class="ui-bar ui-bar-a tails">
+										<a class="excecute" data-excecute="nothing"><img src="img/mobile/upgrade.png"></a>
 									</div>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-				</td>
-				<td colspan="2">
-					<table border="2" cellspacing="0" class="tableProducts">
-						<thead>
-							<tr>
-								<th class="headerProducts"><span>Company</span></th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>
-									<div class="panel">
-										<div class="center panelMyProducts">
-											<div>
-												<a href="http://leads.reifax.com">
-													<img src="//www.nwtechventures.com/images/horz_AboutUs_logo.jpg">
-												</a>
-											</div>
-											<div class="clear"> </div>
-										</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="ui-block-b">
+						<!--h3 class="ui-bar ui-bar-a" align="center">Company</h3-->
+						<div class="ui-body ui-body-noPadding">
+							<div class="ui-grid-a">
+								<div class="ui-block-a">
+									<div class="ui-bar ui-bar-a tails">
+										<a class="excecute" data-excecute="nothing"><img src="img/mobile/about_us.png"></a>
 									</div>
-									<div class="panel">
-										<div class="center panelMyProducts">
-											<div>
-												<a href="http://leads.reifax.com">
-													<img src="//www.thewebsitedudes.com/wp-content/uploads/2013/09/Contact-Us-Logo.gif">
-												</a>
-											</div>
-											<div class="clear"> </div>
-										</div>
+								</div>
+								<div class="ui-block-b">
+									<div class="ui-bar ui-bar-a tails">
+										<a class="excecute" data-excecute="nothing"><img src="img/mobile/contact.png"></a>
 									</div>
-									<div class="panel">
-										<div class="center panelMyProducts">
-											<div>
-												<a href="http://leads.reifax.com">
-													<img src="//www.6topoderweb.com/imagenes/2014/03/twitter_logo_with_bird_450.jpg">
-												</a>
-											</div>
-											<div class="clear"> </div>
-										</div>
+								</div>
+								<div class="ui-block-a">
+									<div class="ui-bar ui-bar-a tails">
+										<a class="excecute" data-excecute="nothing"><img src="img/mobile/twitter.png"></a>
 									</div>
-									<div class="panel">
-										<div class="center panelMyProducts">
-											<div>
-												<a href="http://leads.reifax.com">
-													<img src="//www.seattleu.edu/uploadedImages/COE/facebook_logo.png">
-												</a>
-											</div>
-											<div class="clear"> </div>
-										</div>
+								</div>
+								<div class="ui-block-b">
+									<div class="ui-bar ui-bar-a tails">
+										<a class="excecute" data-excecute="nothing"><img src="img/mobile/facebook.png"></a>
 									</div>
-									<div class="panel">
-										<div class="center panelMyProducts">
-											<div>
-												<a href="http://leads.reifax.com">
-													<img src="//inhouserecruitmentgroup.com/wp-content/uploads/2013/04/Linkedin-Logo.png">
-												</a>
-											</div>
-											<div class="clear"> </div>
-										</div>
+								</div>
+								<div class="ui-block-a">
+									<div class="ui-bar ui-bar-a tails">
+										<a class="excecute" data-excecute="nothing"><img src="img/mobile/linkedin.png"></a>
 									</div>
-									<div class="panel">
-										<div class="center panelMyProducts">
-											<div>
-												<a href="http://leads.reifax.com">
-													<img src="//dev.bukkit.org/media/images/57/432/Referrals_Logo_1-1.png">
-												</a>
-											</div>
-											<div class="clear"> </div>
-										</div>
+								</div>
+								<div class="ui-block-b">
+									<div class="ui-bar ui-bar-a tails">
+										<a class="excecute" data-excecute="nothing"><img src="img/mobile/refferrals.png"></a>
 									</div>
-									<div class="panel">
-										<div class="center panelMyProducts">
-											<div>
-												<a href="http://leads.reifax.com">
-													<img src="//media.merchantcircle.com/29970144/banner%20logo%20light%20background%20no%20outline%20jpg_full.jpeg">
-												</a>
-											</div>
-											<div class="clear"> </div>
-										</div>
+								</div>
+								<div class="ui-block-a">
+									<div class="ui-bar ui-bar-a tails">
+										<a class="excecute" data-excecute="nothing"><img src="img/mobile/banner.png"></a>
 									</div>
-									<div class="panel">
-										<div class="center panelMyProducts">
-											<div>
-												<a href="http://leads.reifax.com">
-													<img src="//booleam.com/resources/img/logo3.png">
-												</a>
-											</div>
-											<div class="clear"> </div>
-										</div>
+								</div>
+								<div class="ui-block-b">
+									<div class="ui-bar ui-bar-a tails">
+										<a class="excecute" data-excecute="nothing"><img src="img/mobile/booleam.png"></a>
 									</div>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-				</td>
-			</tr>
-		</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div data-role="page" id="renderWeb">
+		<a class="toMainMenu" href="#principalMenu" style="display:none;"></a>
+		<!--div data-role="header">
+			<div data-role="controlgroup" data-type="horizontal" class="ui-mini ui-btn-left">
+				<a href="#left-panel" data-theme="a" class="ui-btn ui-icon-bars ui-btn-icon-notext">No text</a>
+				<a href="#principalMenu" data-theme="a" class="ui-btn ui-icon-back ui-btn-icon-notext">No text</a>
+			</div>
+			<h1>
+				REIFAX
+			</h1>
+			<div data-role="controlgroup" data-type="horizontal" class="ui-mini ui-btn-right">
+				<a href="#principalMenu" data-theme="a" class="ui-btn ui-icon-power ui-btn-icon-notext">No text</a>
+			</div>
+		</div-->
+		<div role="main" class="ui-content" style="padding: 0px;">
+			<iframe id="webPage" class="iframeRender"></iframe>
+			<div data-role="panel" id="basic-Search" data-display="overlay" data-position="left">
+				<ul data-role="listview" data-icon="false">
+					<!--li data-icon="delete"-->
+						<a class="closeMenu" style="display:none;" href="#" data-rel="close">Close</a>
+					<!--/li-->
+					<li data-role="list-divider">Share this page</li-->
+					<li><a class="excecute" data-excecute="searchByMap" href="javascript:void(0);">Search By Map</a></li>
+					<li><a class="excecute" data-excecute="xrayReport" href="javascript:void(0);">Xray Report</a></li>
+					<li><a href="#">Discount Report</a></li>
+					<li><a class="excecute" data-excecute="managerSearch" href="javascript:void(0);">Manage search</a></li>
+				</ul>
+			</div><!-- /panel -->
+		</div>
+	</div>
+	<div data-role="page" id="renderHtml">
+		<a class="toMainMenu" href="#principalMenu" style="display:none;"></a>
+		<div data-role="header">
+			<div data-role="controlgroup" data-type="horizontal" class="ui-mini ui-btn-left">
+				<a href="#principalMenu" data-theme="a" class="ui-btn ui-icon-carat-l ui-btn-icon-notext">No text</a>
+				<!--a href="#left-panel" data-theme="a" class="ui-btn ui-icon-carat-l ui-btn-icon-notext">No text</a-->
+			</div>
+			<h1>
+				REIFAX
+			</h1>
+			<div data-role="controlgroup" data-type="horizontal" class="ui-mini ui-btn-right">
+				<a href="#principalMenu" data-theme="a" class="ui-btn ui-icon-power ui-btn-icon-notext">No text</a>
+			</div>
+		</div>
+		<div role="main" class="ui-content" style="padding: 0px;">
+			<iframe id="webPageHtml" class="iframeRender"></iframe>
+		</div>
 	</div>
 </body>
+<script>
+	function closeSubMenu(id){
+		$("#"+id+" a[class*='closeMenu']")
+			.trigger("click");
+	}
+	function fromIframe(idFunction){
+		switch(idFunction){
+			case "main-Menu":
+				$(".toMainMenu")
+					.attr("href","#principalMenu")
+					.trigger("click");
+			break;
+			case "search-Basic":
+				$(".toMainMenu")
+					.attr("href","#basic-Search")
+					.trigger("click");
+			break;
+		}
+			
+	}
+	$(document).ready(function(){
+		$(".excecute").bind("click",function(e){
+			var idFunction	=	$(this).data("excecute");
+			switch(idFunction){
+				case "professional":
+					$("#webPage h1").html($(this).data("title"));
+					globals.globalFunction	=	idFunction;
+					if(globals.execFirstTime==0){
+						globals.execFirstTime	=	1;
+						$("#webPage")
+							.height($(window).height()-$("#professionalMenu div[data-role='header']").height()-7)
+							.attr("src",$(this).data("src"));
+					}
+				break;
+					/***************Begin Basic Search*********************/
+					case "searchByMap":
+						window.parent.document.getElementById("webPage").contentWindow.excecuteMobile(idFunction);
+					break;
+					case "managerSearch":
+						window.parent.document.getElementById("webPage").contentWindow.excecuteMobile(idFunction);
+					break;
+					case "xrayReport":
+						window.parent.document.getElementById("webPage").contentWindow.excecuteMobile(idFunction);
+					break;
+					/****************End Basic Search**********************/
+				/****************Personal Data**********************/
+				case "personalData":
+					$("#renderHtml h1").html($(this).data("title"));
+					globals.globalFunction	=	idFunction;
+					$("#webPageHtml")
+						.height($(window).height()-$("#professionalMenu div[data-role='header']").height()-7)
+						.attr("src",$(this).data("src"));
+				break;
+				/****************Personal Profile**********************/
+				case "personalProfile":
+					$("#renderHtml h1").html($(this).data("title"));
+					globals.globalFunction	=	idFunction;
+					$("#webPageHtml")
+						.height($(window).height()-$("#professionalMenu div[data-role='header']").height()-7)
+						.attr("src",$(this).data("src"));
+				break;
+				/****************Credit Card**********************/
+				case "creditCard":
+					$("#renderHtml h1").html($(this).data("title"));
+					globals.globalFunction	=	idFunction;
+					$("#webPageHtml")
+						.height($(window).height()-$("#professionalMenu div[data-role='header']").height()-7)
+						.attr("src",$(this).data("src"));
+				break;
+				/****************Change Password**********************/
+				case "changePassword":
+					$("#renderHtml h1").html($(this).data("title"));
+					globals.globalFunction	=	idFunction;
+					$("#webPageHtml")
+						.height($(window).height()-$("#professionalMenu div[data-role='header']").height()-7)
+						.attr("src",$(this).data("src"));
+				break;
+				/****************Freeze Account**********************/
+				case "freezeAccount":
+					$("#renderHtml h1").html($(this).data("title"));
+					globals.globalFunction	=	idFunction;
+					$("#webPageHtml")
+						.height($(window).height()-$("#professionalMenu div[data-role='header']").height()-7)
+						.attr("src",$(this).data("src"));
+				break;
+				/****************Forgot Password**********************/
+				case "forgotPassword":
+					$("#renderHtml h1").html($(this).data("title"));
+					$("#renderHtml a[class*='ui-icon-carat-l']").attr("href","#loginReifax");
+					globals.globalFunction	=	idFunction;
+					$("#webPageHtml")
+						.height($(window).height()-$("#professionalMenu div[data-role='header']").height()-7)
+						.attr("src",$(this).data("src"));
+				break;
+				/*case "professional-Basic":
+					globals.globalFunction	=	idFunction;
+					if(globals.execFirstTime==0){
+						globals.execFirstTime	=	1;
+						$("#webPage")
+							.height($(window).height()-$("#professionalMenu div[data-role='header']").height()-7)
+							.attr("src",$(this).data("src"));
+					}
+					var temp	=	setInterval(function(){
+						if(typeof window.parent.document.getElementById("webPage").contentWindow.excecuteMobile!="undefined"){
+							window.parent.document.getElementById("webPage").contentWindow.excecuteMobile(globals);
+							clearInterval(temp);
+						}
+					},2000);
+				break;*/
+				case "testFunction":
+					window.parent.document.getElementById("webPage").contentWindow.excecuteMobile();
+				break;
+				case "nothing":
+					alert("Nothing");
+				break;
+			}
+		});
+	});
+</script>
 </html>
