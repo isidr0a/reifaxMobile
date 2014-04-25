@@ -23,7 +23,6 @@ $(document).on('pageinit', '#loginReifax', function(){
 			},
 			type		:	'post',                   
 			async		:	'true',
-			contentType	:	'application/json',
 			dataType	:	'json',
 			beforeSend	:	function() {
 				$.mobile.loading( "show", {
@@ -39,11 +38,8 @@ $(document).on('pageinit', '#loginReifax', function(){
 			},
 			success		:	function (result){
 				if(result.success=="trueste") {
-					/*$.mobile.changePage("#principalMenu");                         
-					$("#renderHtml a").attr("href","#principalMenu");*/
-					$("#both p")
-						.text("Se Conectoooo.!")
-						.parent().popup( "open", { y: posY } );
+					$.mobile.changePage("#principalMenu");                         
+					$("#renderHtml a").attr("href","#principalMenu");
 				} else if(result.success=="false"){
 					$("#both p")
 						.text(result.msg)
