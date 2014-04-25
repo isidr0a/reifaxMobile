@@ -37,10 +37,10 @@ $(document).on('pageinit', '#loginReifax', function(){
 				$.mobile.loading("hide");
 			},
 			success		:	function (result){
-				if(result.success) {
+				if(result.success=="true") {
 					$.mobile.changePage("#principalMenu");                         
 					$("#renderHtml a").attr("href","#principalMenu");
-				} else if(!result.success){
+				} else if(result.success=="false"){
 					$("#both p")
 						.text(result.msg)
 						.parent().popup( "open", { y: posY } );
