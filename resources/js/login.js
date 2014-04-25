@@ -49,9 +49,9 @@ $(document).on('pageinit', '#loginReifax', function(){
 						.parent().popup( "open", { y: posY } );
 				}
 			},
-			error		:	function (request,error) {
+			error		:	function (request,error,errorThrown) {
 				// This callback function will trigger on unsuccessful action
-				alert('Network error has occurred please try again!');
+				alert('Network error has occurred please try again!'+errorThrown);
 			}
 		});
 	
