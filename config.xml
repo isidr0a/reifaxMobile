@@ -25,11 +25,11 @@
  <!--preference name="stay-in-webview" value="true" /--> 
  
  <!-- Define app icon for each platform. -->
-    <icon src="resources/images/icon.png" />
-    <icon src="resources/images/logoReifaxMobile36.png"   gap:platform="android"    gap:density="ldpi" />
-    <icon src="resources/images/logoReifaxMobile48.png"   gap:platform="android"    gap:density="mdpi" />
-    <icon src="resources/images/logoReifaxMobile72.png"   gap:platform="android"    gap:density="hdpi" />
-    <icon src="resources/images/logoReifaxMobile96.png"   gap:platform="android"    gap:density="xhdpi" />
+    <icon src="includes/images/icon.png" />
+    <icon src="includes/images/logoReifaxMobile36.png"   gap:platform="android"    gap:density="ldpi" />
+    <icon src="includes/images/logoReifaxMobile48.png"   gap:platform="android"    gap:density="mdpi" />
+    <icon src="includes/images/logoReifaxMobile72.png"   gap:platform="android"    gap:density="hdpi" />
+    <icon src="includes/images/logoReifaxMobile96.png"   gap:platform="android"    gap:density="xhdpi" />
 
 	<access origin="*"/>
 
