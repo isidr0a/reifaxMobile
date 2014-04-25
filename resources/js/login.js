@@ -1,6 +1,5 @@
 $(document).on('pageinit', '#loginReifax', function(){  
 	$(document).on('click', '#submit', function(e) { // catch the form's submit event
-		console.debug(e);
 		var posY = e.clientY+e.currentTarget.clientHeight;
 		if($('#username').val().length <= 0){
 			$("#both p")
