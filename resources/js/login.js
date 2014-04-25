@@ -23,7 +23,7 @@ $(document).on('pageinit', '#loginReifax', function(){
 			},
 			type		:	'post',                   
 			async		:	'true',
-			dataType	:	'jsonp',
+			dataType	:	'json',
 			beforeSend	:	function() {
 				$.mobile.loading( "show", {
 					text		:	"Check Login..!",
@@ -37,7 +37,7 @@ $(document).on('pageinit', '#loginReifax', function(){
 				$.mobile.loading("hide");
 			},
 			success		:	function (result){
-				if(result.success=="true") {
+				if(result.success=="trueste") {
 					/*$.mobile.changePage("#principalMenu");                         
 					$("#renderHtml a").attr("href","#principalMenu");*/
 					$("#both p")
