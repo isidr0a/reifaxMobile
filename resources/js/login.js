@@ -38,8 +38,11 @@ $(document).on('pageinit', '#loginReifax', function(){
 			},
 			success		:	function (result){
 				if(result.success=="true") {
-					$.mobile.changePage("#principalMenu");                         
-					$("#renderHtml a").attr("href","#principalMenu");
+					/*$.mobile.changePage("#principalMenu");                         
+					$("#renderHtml a").attr("href","#principalMenu");*/
+					$("#both p")
+						.text("Se Conectoooo.!")
+						.parent().popup( "open", { y: posY } );
 				} else if(result.success=="false"){
 					$("#both p")
 						.text(result.msg)
