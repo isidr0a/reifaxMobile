@@ -40,15 +40,15 @@ $(document).on('pageinit', '#loginReifax', function(){
 				if(result.success) {
 					$.mobile.changePage("#principalMenu");                         
 					$("#renderHtml a").attr("href","#principalMenu");
-				} else {
+				} else if(!result.success){
 					$("#both p")
 						.text(result.msg)
 						.parent().popup( "open", { y: posY } );
 				}
 			},
 			error		:	function (request,error) {
-				// This callback function will trigger on unsuccessful action                
-				alert('Network error has occurred please try again!'+error);
+				// This callback function will trigger on unsuccessful action
+				alert('Network error has occurred please try again!');
 			}
 		});
 	
