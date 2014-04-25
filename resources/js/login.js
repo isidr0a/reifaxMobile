@@ -17,7 +17,7 @@ $(document).on('pageinit', '#loginReifax', function(){
 		
 		// Send data to server through the ajax call
 		// action is functionality we want to call and outputJSON is our data
-		$.ajax({url: '/resources/php/properties_validacion.php',
+		$.ajax({url: 'http://test.reifax.com/resources/php/properties_validacion.php',
 			data		:	{
 				formData	:	$('#check-user').serialize()
 			},
