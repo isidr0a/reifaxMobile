@@ -170,12 +170,12 @@
 								</div>
 								<div class="ui-block-a">
 									<div class="ui-bar ui-bar-a tails">
-										<a class="excecute" data-excecute="nothing"><img src="includes/images/mobile/cancel.png"></a>
+										<a class="excecute" data-excecute="cancelAccount" data-src="http://test.reifax.com/settings/cancelAccount.php" data-title="REIFAX - CANCEL ACCOUNT" data-transition="slide" href="#renderHtml"><img src="includes/images/mobile/cancel.png"></a>
 									</div>
 								</div>
 								<div class="ui-block-b">
 									<div class="ui-bar ui-bar-a tails">
-										<a class="excecute" data-excecute="nothing"><img src="includes/images/mobile/upgrade.png"></a>
+										<a class="excecute" data-excecute="upgradeAccount" data-src="http://test.reifax.com/settings/upgradeAccountTem.php" data-title="REIFAX - UPGRADE ACCOUNT" data-transition="slide" href="#renderHtml"><img src="includes/images/mobile/upgrade.png"></a>
 									</div>
 								</div>
 							</div>
@@ -370,6 +370,22 @@
 				case "forgotPassword":
 					$("#renderHtml h1").html($(this).data("title"));
 					$("#renderHtml a[class*='ui-icon-carat-l']").attr("href","#loginReifax");
+					globals.globalFunction	=	idFunction;
+					$("#webPageHtml")
+						.height($(window).height()-$("#professionalMenu div[data-role='header']").height()-7)
+						.attr("src",$(this).data("src"));
+				break;
+				/****************Cancel Password**********************/
+				case "cancelAccount":
+					$("#renderHtml h1").html($(this).data("title"));
+					globals.globalFunction	=	idFunction;
+					$("#webPageHtml")
+						.height($(window).height()-$("#professionalMenu div[data-role='header']").height()-7)
+						.attr("src",$(this).data("src"));
+				break;
+				/****************Upgrade Account Tem**********************/
+				case "upgradeAccount":
+					$("#renderHtml h1").html($(this).data("title"));
 					globals.globalFunction	=	idFunction;
 					$("#webPageHtml")
 						.height($(window).height()-$("#professionalMenu div[data-role='header']").height()-7)
