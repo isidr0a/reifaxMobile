@@ -140,22 +140,22 @@
 							<div class="ui-grid-a">
 								<div class="ui-block-a">
 									<div class="ui-bar ui-bar-a tails">
-										<a class="excecute" data-excecute="personalData" data-src="http://test.reifax.com/settings/personalData.php" data-title="REIFAX - PERSONAL DATA" data-transition="slide" href="#renderHtml"><img src="includes/images/mobile/personal_data.png"></a>
+										<a class="excecute" data-excecute="htmlOut" data-src="http://test.reifax.com/settings/personalData.php" data-title="REIFAX - PERSONAL DATA" data-transition="slide" href="#renderHtml"><img src="includes/images/mobile/personal_data.png"></a>
 									</div>
 								</div>
 								<div class="ui-block-b">
 									<div class="ui-bar ui-bar-a tails">
-										<a class="excecute" data-excecute="personalProfile" data-src="http://test.reifax.com/settings/profileData.php" data-title="REIFAX - PERSONAL PROFILE" data-transition="slide" href="#renderHtml"><img src="includes/images/mobile/personal_profile.png"></a>
+										<a class="excecute" data-excecute="htmlOut" data-src="http://test.reifax.com/settings/profileData.php" data-title="REIFAX - PERSONAL PROFILE" data-transition="slide" href="#renderHtml"><img src="includes/images/mobile/personal_profile.png"></a>
 									</div>
 								</div>
 								<div class="ui-block-a">
 									<div class="ui-bar ui-bar-a tails">
-										<a class="excecute" data-excecute="creditCard" data-src="http://test.reifax.com/settings/creditCard.php" data-title="REIFAX - CREDIT CARD" data-transition="slide" href="#renderHtml"><img src="includes/images/mobile/credit_card.png"></a>
+										<a class="excecute" data-excecute="htmlOut" data-src="http://test.reifax.com/settings/creditCard.php" data-title="REIFAX - CREDIT CARD" data-transition="slide" href="#renderHtml"><img src="includes/images/mobile/credit_card.png"></a>
 									</div>
 								</div>
 								<div class="ui-block-b">
 									<div class="ui-bar ui-bar-a tails">
-										<a class="excecute" data-excecute="changePassword" data-src="http://test.reifax.com/settings/changePassword.php" data-title="REIFAX - CHANGE PASSWORD" data-transition="slide" href="#renderHtml"><img src="includes/images/mobile/password.png"></a>
+										<a class="excecute" data-excecute="htmlOut" data-src="http://test.reifax.com/settings/changePassword.php" data-title="REIFAX - CHANGE PASSWORD" data-transition="slide" href="#renderHtml"><img src="includes/images/mobile/password.png"></a>
 									</div>
 								</div>
 								<div class="ui-block-a">
@@ -165,17 +165,17 @@
 								</div>
 								<div class="ui-block-b">
 									<div class="ui-bar ui-bar-a tails">
-										<a class="excecute" data-excecute="freezeAccount" data-src="http://test.reifax.com/settings/freezeAccount.php" data-title="REIFAX - FREEZE ACCOUNT" data-transition="slide" href="#renderHtml"><img src="includes/images/mobile/freeze.png"></a>
+										<a class="excecute" data-excecute="htmlOut" data-src="http://test.reifax.com/settings/freezeAccount.php" data-title="REIFAX - FREEZE ACCOUNT" data-transition="slide" href="#renderHtml"><img src="includes/images/mobile/freeze.png"></a>
 									</div>
 								</div>
 								<div class="ui-block-a">
 									<div class="ui-bar ui-bar-a tails">
-										<a class="excecute" data-excecute="cancelAccount" data-src="http://test.reifax.com/settings/cancelAccount.php" data-title="REIFAX - CANCEL ACCOUNT" data-transition="slide" href="#renderHtml"><img src="includes/images/mobile/cancel.png"></a>
+										<a class="excecute" data-excecute="htmlOut" data-src="http://test.reifax.com/settings/cancelAccount.php" data-title="REIFAX - CANCEL ACCOUNT" data-transition="slide" href="#renderHtml"><img src="includes/images/mobile/cancel.png"></a>
 									</div>
 								</div>
 								<div class="ui-block-b">
 									<div class="ui-bar ui-bar-a tails">
-										<a class="excecute" data-excecute="upgradeAccount" data-src="http://test.reifax.com/settings/upgradeAccountTem.php" data-title="REIFAX - UPGRADE ACCOUNT" data-transition="slide" href="#renderHtml"><img src="includes/images/mobile/upgrade.png"></a>
+										<a class="excecute" data-excecute="htmlOut" data-src="http://test.reifax.com/settings/upgradeAccountTem.php" data-title="REIFAX - UPGRADE ACCOUNT" data-transition="slide" href="#renderHtml"><img src="includes/images/mobile/upgrade.png"></a>
 									</div>
 								</div>
 							</div>
@@ -250,10 +250,10 @@
 			<iframe id="webPage" class="iframeRender"></iframe>
 			<div data-role="panel" id="basic-Search" data-display="overlay" data-position="left">
 				<ul data-role="listview" data-icon="false">
-					<!--li data-icon="delete"-->
+					<!--li data-icon="delete">
 						<a class="closeMenu" style="display:none;" href="#" data-rel="close">Close</a>
-					<!--/li-->
-					<li data-role="list-divider">Share this page</li-->
+					</li-->
+					<li data-role="list-divider">Share this page</li>
 					<li><a class="excecute" data-excecute="searchByMap" href="javascript:void(0);">Search By Map</a></li>
 					<li><a class="excecute" data-excecute="xrayReport" href="javascript:void(0);">Xray Report</a></li>
 					<li><a href="#">Discount Report</a></li>
@@ -267,6 +267,7 @@
 		<div data-role="header">
 			<div data-role="controlgroup" data-type="horizontal" class="ui-mini ui-btn-left">
 				<a href="#principalMenu" data-theme="a" class="ui-btn ui-icon-carat-l ui-btn-icon-notext">No text</a>
+				<a href="#subPrincipalMenu" data-theme="a" class="ui-btn ui-icon-bars ui-btn-icon-notext">No text</a>
 				<!--a href="#left-panel" data-theme="a" class="ui-btn ui-icon-carat-l ui-btn-icon-notext">No text</a-->
 			</div>
 			<h1>
@@ -278,6 +279,38 @@
 		</div>
 		<div role="main" class="ui-content" style="padding: 0px;">
 			<iframe id="webPageHtml" class="iframeRender"></iframe>
+			<div data-role="panel" id="subPrincipalMenu" data-display="overlay" data-position="left">
+				<ul data-role="listview" data-icon="false">
+					<!--li data-icon="delete">
+						<a class="closeMenu" style="display:none;" href="#" data-rel="close">Close</a>
+					</li>
+					<li data-role="list-divider">Share this page</li-->
+					<li><a class="excecute" data-excecute="noting" href="javascript:void(0);">Reifax Professional</a></li>
+					<li><a class="excecute" data-excecute="noting" href="javascript:void(0);">Home Deals</a></li>
+					<li><a class="excecute" data-excecute="noting" href="javascript:void(0);">Buyers Pro</a></li>
+					<li><a class="excecute" data-excecute="noting" href="javascript:void(0);">Leads Generator</a></li>
+					<li><a class="excecute" data-excecute="noting" href="javascript:void(0);">Personal Data</a></li>
+					<li><a class="excecute" data-excecute="noting" href="javascript:void(0);">Personal Profile</a></li>
+					<li><a class="excecute" data-excecute="noting" href="javascript:void(0);">Payment Settings</a></li>
+					<li><a class="excecute" data-excecute="noting" href="javascript:void(0);">Password</a></li>
+					<li><a class="excecute" data-excecute="noting" href="javascript:void(0);">Statements</a></li>
+					<li><a class="excecute" data-excecute="noting" href="javascript:void(0);">Freeze</a></li>
+					<li><a class="excecute" data-excecute="noting" href="javascript:void(0);">Webinar</a></li>
+					<li><a class="excecute" data-excecute="noting" href="javascript:void(0);">Tickets</a></li>
+					<li><a class="excecute" data-excecute="noting" href="javascript:void(0);">Live Support</a></li>
+					<li><a class="excecute" data-excecute="noting" href="javascript:void(0);">Help</a></li>
+					<li><a class="excecute" data-excecute="noting" href="javascript:void(0);">About Us</a></li>
+					<li><a class="excecute" data-excecute="noting" href="javascript:void(0);">Contact Us</a></li>
+					<li><a class="excecute" data-excecute="noting" href="javascript:void(0);">Twitter</a></li>
+					<li><a class="excecute" data-excecute="noting" href="javascript:void(0);">FaceBook</a></li>
+					<li><a class="excecute" data-excecute="noting" href="javascript:void(0);">LinkedIn</a></li>
+					<li><a class="excecute" data-excecute="noting" href="javascript:void(0);">Affiliate Market</a></li>
+					<li><a class="excecute" data-excecute="noting" href="javascript:void(0);">Affiliate Settings</a></li>
+					<li><a class="excecute" data-excecute="noting" href="javascript:void(0);">Upgrade</a></li>
+					<li><a class="excecute" data-excecute="cancelAccount" data-src="/settings/cancelAccount.php" data-title="REIFAX - CANCEL ACCOUNT" data-transition="slide" href="#renderHtml">Cancel</a></li>
+					<li><a class="excecute" data-excecute="noting" href="javascript:void(0);">LogOut</a></li>
+				</ul>
+			</div><!-- /panel -->
 		</div>
 	</div>
 </body>
@@ -287,6 +320,7 @@
 			.trigger("click");
 	}
 	function fromIframe(idFunction){
+		console.debug(idFunction);
 		switch(idFunction){
 			case "main-Menu":
 				$(".toMainMenu")
@@ -294,7 +328,7 @@
 					.trigger("click");
 			break;
 			case "search-Basic":
-				$(".toMainMenu")
+				$("#renderWeb a[class*=toMainMenu]")
 					.attr("href","#basic-Search")
 					.trigger("click");
 			break;
@@ -326,40 +360,9 @@
 						window.parent.document.getElementById("webPage").contentWindow.excecuteMobile(idFunction);
 					break;
 					/****************End Basic Search**********************/
-				/****************Personal Data**********************/
-				case "personalData":
-					$("#renderHtml h1").html($(this).data("title"));
-					globals.globalFunction	=	idFunction;
-					$("#webPageHtml")
-						.height($(window).height()-$("#professionalMenu div[data-role='header']").height()-7)
-						.attr("src",$(this).data("src"));
-				break;
-				/****************Personal Profile**********************/
-				case "personalProfile":
-					$("#renderHtml h1").html($(this).data("title"));
-					globals.globalFunction	=	idFunction;
-					$("#webPageHtml")
-						.height($(window).height()-$("#professionalMenu div[data-role='header']").height()-7)
-						.attr("src",$(this).data("src"));
-				break;
-				/****************Credit Card**********************/
-				case "creditCard":
-					$("#renderHtml h1").html($(this).data("title"));
-					globals.globalFunction	=	idFunction;
-					$("#webPageHtml")
-						.height($(window).height()-$("#professionalMenu div[data-role='header']").height()-7)
-						.attr("src",$(this).data("src"));
-				break;
-				/****************Change Password**********************/
-				case "changePassword":
-					$("#renderHtml h1").html($(this).data("title"));
-					globals.globalFunction	=	idFunction;
-					$("#webPageHtml")
-						.height($(window).height()-$("#professionalMenu div[data-role='header']").height()-7)
-						.attr("src",$(this).data("src"));
-				break;
-				/****************Freeze Account**********************/
-				case "freezeAccount":
+				/****************Html Out**********************/
+				case "htmlOut":
+					$("#webPageHtml").contents().find("body").html('');
 					$("#renderHtml h1").html($(this).data("title"));
 					globals.globalFunction	=	idFunction;
 					$("#webPageHtml")
@@ -370,22 +373,6 @@
 				case "forgotPassword":
 					$("#renderHtml h1").html($(this).data("title"));
 					$("#renderHtml a[class*='ui-icon-carat-l']").attr("href","#loginReifax");
-					globals.globalFunction	=	idFunction;
-					$("#webPageHtml")
-						.height($(window).height()-$("#professionalMenu div[data-role='header']").height()-7)
-						.attr("src",$(this).data("src"));
-				break;
-				/****************Cancel Password**********************/
-				case "cancelAccount":
-					$("#renderHtml h1").html($(this).data("title"));
-					globals.globalFunction	=	idFunction;
-					$("#webPageHtml")
-						.height($(window).height()-$("#professionalMenu div[data-role='header']").height()-7)
-						.attr("src",$(this).data("src"));
-				break;
-				/****************Upgrade Account Tem**********************/
-				case "upgradeAccount":
-					$("#renderHtml h1").html($(this).data("title"));
 					globals.globalFunction	=	idFunction;
 					$("#webPageHtml")
 						.height($(window).height()-$("#professionalMenu div[data-role='header']").height()-7)
