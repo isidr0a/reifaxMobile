@@ -31,6 +31,6 @@
     <icon src="includes/images/logoReifaxMobile72.png"   gap:platform="android"    gap:density="hdpi" />
     <icon src="includes/images/logoReifaxMobile96.png"   gap:platform="android"    gap:density="xhdpi" />
 
-	<access origin="*"/>
+	<access origin="*" subdomains="true" />
 
 </widget>
