@@ -336,7 +336,10 @@
 			
 	}
 	window.addEventListener("message", function(event) {
-		console.log("Mierda");
+		//console.log("Mierda");
+		$("#renderWeb a[class*=toMainMenu]")
+			.attr("href","#basic-Search")
+			.trigger("click");
 	},false);
 	$(document).ready(function(){
 		$(".excecute").bind("click",function(e){
