@@ -65,7 +65,7 @@
                         <input type="password" value="" name="loginPass" id="password"/> 
                     </div>
 					<div class="buttonLogin">
-						<input type="button" data-theme="b" name="submit" id="submit" value="Login">
+						<input type="button" data-theme="a" name="submit" id="submit" value="Login">
 					</div>
                     <input type="button" data-theme="b" id="forgot" value="Forgot your PassWord" class="excecute" onclick="window.location.href='#renderHtml'"
 						data-excecute="forgotPassword" data-src="http://test.reifax.com/register/forgotPassword.php" data-title="FORGOT YOUR PASSWORD">
@@ -325,28 +325,22 @@
 		$("#"+id+" a[class*='closeMenu']")
 			.trigger("click");
 	}
-	function fromIframe(idFunction){
-		console.debug(idFunction);
-		switch(idFunction){
-			case "main-Menu":
-				$(".toMainMenu")
-					.attr("href","#principalMenu")
-					.trigger("click");
-			break;
-			case "search-Basic":
-				$("#renderWeb a[class*=toMainMenu]")
-					.attr("href","#basic-Search")
-					.trigger("click");
-			break;
-		}
-			
-	}
-	window.addEventListener("message", function(event) {
-		$("#renderWeb a[class*=toMainMenu]")
-			.attr("href","#basic-Search")
-			.trigger("click");
-	},false);
 	$(document).ready(function(){
+		window.addEventListener("message", function(event) {
+			switch(event.data){
+				case "main-Menu":
+					$("#renderWeb a[class*=toMainMenu]")
+						.attr("href","#principalMenu")
+						.trigger("click");
+				break;
+				case "search-Basic":
+					$("#renderWeb a[class*=toMainMenu]")
+						.attr("href","#basic-Search")
+						.trigger("click");
+				break;
+			}
+		},false);
+		
 		$(".excecute").bind("click",function(e){
 			var idFunction	=	$(this).data("excecute");
 			switch(idFunction){
