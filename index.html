@@ -205,12 +205,12 @@
 								</div>
 								<div class="ui-block-a">
 									<div class="ui-bar ui-bar-a tails">
-										<a class="excecute" href="https://twitter.com/reifax" target="_blank"><img src="includes/images/mobile/twitter.png"></a>
+										<a class="excecute" data-excecute="externalApp" data-src="https://twitter.com/reifax" href="javascript:void(0);"><img src="includes/images/mobile/twitter.png"></a>
 									</div>
 								</div>
 								<div class="ui-block-b">
 									<div class="ui-bar ui-bar-a tails">
-										<a class="excecute" href="https://www.facebook.com/ReiFax" target="_blank"><img src="includes/images/mobile/facebook.png"></a>
+										<a class="excecute" data-excecute="externalApp" data-src="https://www.facebook.com/ReiFax" href="javascript:void(0);" target="_blank"><img src="includes/images/mobile/facebook.png"></a>
 									</div>
 								</div>
 								<div class="ui-block-a">
@@ -382,6 +382,11 @@
 					$("#webPageHtml")
 						.height($(window).height()-$("#professionalMenu div[data-role='header']").height()-7-43)
 						.attr("src",$(this).data("src"));
+				break;
+				case "externalApp":
+					e.preventDefault();
+					var targetURL = $(this).data("src");
+					window.open(targetURL, "_system");
 				break;
 				/*case "professional-Basic":
 					globals.globalFunction	=	idFunction;
