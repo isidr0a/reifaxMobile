@@ -40,7 +40,7 @@ $(document).on('pageinit', '#loginReifax', function(){
 			success		:	function (result){
 				if(result.success) {
 					$.mobile.changePage("#principalMenu");                         
-					$("#renderHtml a").attr("href","#principalMenu");
+					$("#renderHtml a[class*='icon-carat-l']").attr("href","#principalMenu");
 				} else if(!result.success){
 					$("#both p")
 						.text(result.msg)
