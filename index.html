@@ -136,7 +136,7 @@
 								</div>
 								<div class="ui-block-b">
 									<div class="ui-bar ui-bar-a tails">
-										<a class="excecute" data-excecute="nothing"><img src="includes/images/mobile/help.png"></a>
+										<a class="excecute" data-excecute="htmlOut" data-src="http://professional.reifax.com/help/" data-title="REIFAX - HELP" data-transition="slide" href="#renderHtml"><img src="img/mobile/help.png"></a>
 									</div>
 								</div>
 							</div>
@@ -210,8 +210,7 @@
 								</div>
 								<div class="ui-block-b">
 									<div class="ui-bar ui-bar-a tails">
-										<!--a class="excecute" data-excecute="externalApp" data-src="https://www.facebook.com/ReiFax" href="javascript:void(0);" target="_blank"><img src="includes/images/mobile/facebook.png"></a-->
-										<a ="excecute" data-excecute="externalApp" href="#" onclick="window.open('https://www.youtube.com/watch?v=iJdEOImLJq0', '_system');"><img src="includes/images/mobile/facebook.png"></a>
+										<a class="excecute" data-excecute="externalApp" data-src="https://www.facebook.com/ReiFax" href="javascript:void(0);" target="_blank"><img src="includes/images/mobile/facebook.png"></a>
 									</div>
 								</div>
 								<div class="ui-block-a">
@@ -221,12 +220,12 @@
 								</div>
 								<div class="ui-block-b">
 									<div class="ui-bar ui-bar-a tails">
-										<a class="excecute" data-excecute="nothing"><img src="includes/images/mobile/refferrals.png"></a>
+										<a class="excecute" data-excecute="htmlOut" data-src="http://test.reifax.com/settings/affMarketingReferrals.php" data-title="REIFAX - AFFILIATE MARKET" data-transition="slide" href="#renderHtml"><img src="img/mobile/refferrals.png"></a>
 									</div>
 								</div>
 								<div class="ui-block-a">
 									<div class="ui-bar ui-bar-a tails">
-										<a class="excecute" data-excecute="nothing"><img src="includes/images/mobile/banner.png"></a>
+										<a class="excecute" data-excecute="htmlOut" data-src="http://test.reifax.com/settings/banners.php" data-title="REIFAX - AFFILIATE SETTINGS" data-transition="slide" href="#renderHtml"><img src="img/mobile/banner.png"></a>
 									</div>
 								</div>
 								<div class="ui-block-b">
@@ -289,9 +288,7 @@
 			<iframe id="webPageHtml" class="iframeRender"></iframe>
 			<div data-role="panel" id="subPrincipalMenu" data-display="overlay" data-position="left">
 				<ul data-role="listview" data-icon="false">
-					<!--li data-icon="delete">
-						<a class="closeMenu" style="display:none;" href="#" data-rel="close">Close</a>
-					</li-->
+					<a class="closeMenu" style="display:none;" href="javascript:void(0);" data-rel="close">Close</a>
 					<li><a class="excecute" data-excecute="noting" href="javascript:void(0);">Reifax Professional</a></li>
 					<li><a class="excecute" data-excecute="noting" href="javascript:void(0);">Home Deals</a></li>
 					<li><a class="excecute" data-excecute="noting" href="javascript:void(0);">Buyers Pro</a></li>
@@ -307,17 +304,34 @@
 					<li><a class="excecute" data-excecute="noting" href="javascript:void(0);">Live Support</a></li>
 					<li><a class="excecute" data-excecute="noting" href="javascript:void(0);">Help</a></li>
 					<li><a class="excecute" data-excecute="noting" href="javascript:void(0);">About Us</a></li>
-					<li><a class="excecute" data-excecute="noting" href="javascript:void(0);">Contact Us</a></li>
+					<li><a class="excecute" data-excecute="htmlOutIn" data-src="http://test.reifax.com/company/contactUs.php" data-title="REIFAX - CONTACT US" data-transition="slide" href="#renderHtml">Contact Us</a></li>
 					<li><a class="excecute" data-excecute="noting" href="javascript:void(0);">Twitter</a></li>
 					<li><a class="excecute" data-excecute="noting" href="javascript:void(0);">FaceBook</a></li>
 					<li><a class="excecute" data-excecute="noting" href="javascript:void(0);">LinkedIn</a></li>
 					<li><a class="excecute" data-excecute="noting" href="javascript:void(0);">Affiliate Market</a></li>
 					<li><a class="excecute" data-excecute="noting" href="javascript:void(0);">Affiliate Settings</a></li>
 					<li><a class="excecute" data-excecute="noting" href="javascript:void(0);">Upgrade</a></li>
-					<li><a class="excecute" data-excecute="cancelAccount" data-src="/settings/cancelAccount.php" data-title="REIFAX - CANCEL ACCOUNT" data-transition="slide" href="#renderHtml">Cancel</a></li>
+					<li><a class="excecute" data-excecute="cancelAccount" data-src="http://test.reifax.com/settings/cancelAccount.php" data-title="REIFAX - CANCEL ACCOUNT" data-transition="slide" href="#renderHtml">Cancel</a></li>
 					<li><a class="excecute" data-excecute="noting" href="javascript:void(0);">LogOut</a></li>
 				</ul>
 			</div><!-- /panel -->
+		</div>
+	</div>
+	<div data-role="page" id="renderYouTube">
+		<div data-role="header" data-position="fixed">
+			<div data-role="controlgroup" data-type="horizontal" class="ui-mini ui-btn-left">
+				<a href="#renderHtml" data-theme="a" class="ui-btn ui-icon-carat-l ui-btn-icon-notext">No text</a>
+				<!--a href="#left-panel" data-theme="a" class="ui-btn ui-icon-carat-l ui-btn-icon-notext">No text</a-->
+			</div>
+			<h1>
+				REIFAX
+			</h1>
+			<div data-role="controlgroup" data-type="horizontal" class="ui-mini ui-btn-right">
+				<a href="#principalMenu" data-theme="a" class="ui-btn ui-icon-power ui-btn-icon-notext">No text</a>
+			</div>
+		</div>
+		<div role="main" class="ui-content" style="padding: 0px;">
+			<iframe id="webPageYouTube" class="iframeRender"></iframe>
 		</div>
 	</div>
 </body>
@@ -327,8 +341,16 @@
 			.trigger("click");
 	}
 	$(document).ready(function(){
+		$('#renderHtml a[class*="ui-icon-carat-l"]').bind('click',function(){
+			var title	=	$('#renderHtml h1').html();
+			if('REIFAX - HELP'==title || 'REIFAX - LIVE SUPPORT'==title){
+				$('#webPageHtml').remove();
+				$('<iframe id="webPageHtml" class="iframeRender"></iframe>').insertBefore('#subPrincipalMenu');
+			}
+		});
 		window.addEventListener("message", function(event) {
-			switch(event.data){
+			console.debug(event);
+			switch(event.data.idFunction){
 				case "main-Menu":
 					$("#renderWeb a[class*=toMainMenu]")
 						.attr("href","#principalMenu")
@@ -338,6 +360,17 @@
 					$("#renderWeb a[class*=toMainMenu]")
 						.attr("href","#basic-Search")
 						.trigger("click");
+				break;
+				case "videoYouTube":
+					$("#renderYouTube").contents().find("body").html('');
+					$("#renderYouTube h1").html(event.data.title);
+					$("#renderWeb a[class*=toMainMenu]")
+						.attr("href","#renderYouTube")
+						.trigger("click");
+					globals.globalFunction	=	event.data.idFunction;
+					$("#webPageYouTube")
+						.height($(window).height()-$("#professionalMenu div[data-role='header']").height()-7-43)
+						.attr("src",event.data.video);
 				break;
 			}
 		},false);
@@ -374,6 +407,15 @@
 					$("#webPageHtml")
 						.height($(window).height()-$("#professionalMenu div[data-role='header']").height()-7-43)
 						.attr("src",$(this).data("src"));
+				break;
+				case "htmlOutIn":
+					$("#webPageHtml").contents().find("body").html('');
+					$("#renderHtml h1").html($(this).data("title"));
+					globals.globalFunction	=	idFunction;
+					$("#webPageHtml")
+						.height($(window).height()-$("#professionalMenu div[data-role='header']").height()-7-43)
+						.attr("src",$(this).data("src"));
+					$("#subPrincipalMenu .closeMenu").trigger('click');
 				break;
 				/****************Forgot Password**********************/
 				case "forgotPassword":
