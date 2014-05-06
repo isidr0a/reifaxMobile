@@ -386,8 +386,8 @@
 				case "externalApp":
 					e.preventDefault();
 					var targetURL = $(this).data("src");
-					//window.open(targetURL, "_system");
-					document.location = 'fb://';
+					window.open(targetURL, "_system",location="no");
+					//document.location = 'fb://';
 				break;
 				/*case "professional-Basic":
 					globals.globalFunction	=	idFunction;
