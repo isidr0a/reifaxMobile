@@ -7,24 +7,33 @@
 
  <!-- versionCode is optional and Android only -->
 
- <name>Reifax Mobile</name>
+	<name>Reifax Mobile</name>
 
- <description>
-  An example for phonegap build docs. 
- </description> 
+	<description>
+		An example for phonegap build docs. 
+	</description> 
 
- <author href="http://test.reifax.com" email="jesusemarquezz@gmail.com">
-  Hardeep Shoker 
- </author>
+	<author href="http://test.reifax.com" email="jesusemarquezz@gmail.com">
+		Jesus Marquez
+	</author>
  
- <content src="index.html" />
+	<content src="index.html" />
 
- <!-- Preferences -->
-
- <preference name="orientation" value="landscape" />
- <!--preference name="stay-in-webview" value="true" /--> 
+	<!-- Preferences -->
+	<preference name="orientation" value="landscape" />
+	<!--preference name="stay-in-webview" value="true" /--> 
  
- <!-- Define app icon for each platform. -->
+	<feature name="http://api.phonegap.com/1.0/device"/>
+	<feature name="http://api.phonegap.com/1.0/battery"/>
+	<feature name="http://api.phonegap.com/1.0/camera"/>
+	<feature name="http://api.phonegap.com/1.0/contacts"/>
+	<feature name="http://api.phonegap.com/1.0/file"/>
+	<feature name="http://api.phonegap.com/1.0/geolocation"/>
+	<feature name="http://api.phonegap.com/1.0/media"/>
+	<feature name="http://api.phonegap.com/1.0/network"/>
+	<feature name="http://api.phonegap.com/1.0/notification"/>
+ 
+	<!-- Define app icon for each platform. -->
     <icon src="includes/images/icon.png" />
     <icon src="includes/images/logoReifaxMobile36.png"   gap:platform="android"    gap:density="ldpi" />
     <icon src="includes/images/logoReifaxMobile48.png"   gap:platform="android"    gap:density="mdpi" />
