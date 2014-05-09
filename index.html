@@ -5,6 +5,7 @@
 <script type="text/javascript" src="includes/js/lib/jqueryMobile/demos/js/jquery.js"></script>
 <script type="text/javascript" src="includes/js/lib/jqueryMobile/jquery.mobile-1.4.2.min.js"></script>
 <script type="text/javascript" src="resources/js/login.js"></script>
+<script type="text/javascript" src="resources/js/settings.js"></script>
 <!-- Head of ReiFax Website -->
 <style>
 	.contentPrincipal	{
@@ -231,7 +232,7 @@
 								</div>
 								<div class="ui-block-b">
 									<div class="ui-bar ui-bar-a tails">
-										<a class="excecute" data-excecute="nothing"><img src="includes/images/mobile/log_out.png"></a>
+										<a class="excecute" data-excecute="logOut"><img src="includes/images/mobile/log_out.png"></a>
 									</div>
 								</div>
 							</div>
@@ -350,7 +351,7 @@
 			}
 		});
 		$('#renderYouTube a[class*="ui-icon-carat-l"]').bind('click',function(){
-			$("#renderYouTube").contents().find("body").html('');
+			$("#webPageYouTube").contents().find("body").html('');
 		});
 		document.addEventListener("deviceready", onDR, false);
 
@@ -430,6 +431,10 @@
 						.height($(window).height()-$("#professionalMenu div[data-role='header']").height()-7-43)
 						.attr("src",$(this).data("src"));
 					$("#subPrincipalMenu .closeMenu").trigger('click');
+				break;
+				/****************LogOut**********************/
+				case "logOut":
+					reifaxMobile.logOut();
 				break;
 				/****************Forgot Password**********************/
 				case "forgotPassword":
