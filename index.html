@@ -343,6 +343,7 @@
 			.trigger("click");
 	}
 	$(document).ready(function(){
+		reifaxMobile.validSession();
 		$('#renderHtml a[class*="ui-icon-carat-l"]').bind('click',function(){
 			var title	=	$('#renderHtml h1').html();
 			if('REIFAX - HELP'==title || 'REIFAX - LIVE SUPPORT'==title){
