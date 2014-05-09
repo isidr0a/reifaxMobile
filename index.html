@@ -351,9 +351,14 @@
 		$('#renderYouTube a[class*="ui-icon-carat-l"]').bind('click',function(){
 			$("#renderYouTube").contents().find("body").html('');
 		});
-		document.addEventListener("backbutton", backKeyDown, true); 
-		function backKeyDown() { 
-			 // Call my back key code here.
+		document.addEventListener("deviceready", onDR, false);
+
+		function onDR(){
+			document.addEventListener("backbutton", backKeyDown, true);
+		}
+
+		function backKeyDown() {
+			// do something here if you wish
 			alert('go back!');
 		}
 		window.addEventListener("message", function(event) {
