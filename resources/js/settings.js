@@ -53,14 +53,14 @@ var reifaxMobile	=	{
 			},
 			success		:	function (result){
 				console.log(result);
-				var results=result.split('^');
+				/*var results=result.split('^');
 				if(results[0]=='invalid'){
 					$("#both p")
 						.text('This sesion was closed as another became active.')
 						.parent().popup( "open", { y: posY } );
 				}else{
 					$.mobile.changePage( "#principalMenu", { transition: "slidedown", changeHash: false });
-				}
+				}*/
 			},
 			error		:	function (request,error) {
 				// This callback function will trigger on unsuccessful action                
