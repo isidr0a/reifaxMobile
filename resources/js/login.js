@@ -39,7 +39,8 @@ $(document).on('pageinit', '#loginReifax', function(){
 			},
 			success		:	function (result){
 				if(result.success) {
-					$.mobile.changePage("#principalMenu");                         
+					//$.mobile.changePage("#principalMenu");                         
+					$.mobile.changePage( "#principalMenu", { transition: "slideup", changeHash: false });
 					$("#renderHtml a[class*='icon-carat-l']").attr("href","#principalMenu");
 				} else if(!result.success){
 					$("#both p")
