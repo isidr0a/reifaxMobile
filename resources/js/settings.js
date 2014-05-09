@@ -52,11 +52,11 @@ var reifaxMobile	=	{
 				$.mobile.loading("hide");
 			},
 			success		:	function (result){
-				console.debug(result);
+				console.log(result);
 				var results=result.split('^');
 				if(results[0]=='invalid'){
 					$("#both p")
-						.text(result.msg)
+						.text('This sesion was closed as another became active.')
 						.parent().popup( "open", { y: posY } );
 				}else{
 					$.mobile.changePage( "#principalMenu", { transition: "slidedown", changeHash: false });
