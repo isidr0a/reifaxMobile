@@ -348,6 +348,14 @@
 				$('<iframe id="webPageHtml" class="iframeRender"></iframe>').insertBefore('#subPrincipalMenu');
 			}
 		});
+		$('#renderYouTube a[class*="ui-icon-carat-l"]').bind('click',function(){
+			$("#renderYouTube").contents().find("body").html('');
+		});
+		document.addEventListener("backbutton", backKeyDown, true); 
+		function backKeyDown() { 
+			 // Call my back key code here.
+			alert('go back!');
+		}
 		window.addEventListener("message", function(event) {
 			console.debug(event);
 			switch(event.data.idFunction){
