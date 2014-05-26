@@ -1,6 +1,5 @@
 <!DOCTYPE HTML>
 <html>
-<!--script type="text/javascript" charset="utf-8" src="resources/js/phonegap-1.0.0.js"></script-->
 <link rel="stylesheet" href="includes/js/lib/jqueryMobile/jquery.mobile-1.4.2.min.css" type="text/css" media="screen">
 <script type="text/javascript" src="includes/js/lib/jqueryMobile/demos/js/jquery.js"></script>
 <script type="text/javascript" src="includes/js/lib/jqueryMobile/jquery.mobile-1.4.2.min.js"></script>
@@ -32,7 +31,6 @@
 		min-height: 68px;
 		padding:0px
 	}
-		
 	h1	{
 		align:center;
 	}
@@ -343,27 +341,26 @@
 			.trigger("click");
 	}
 	$(document).ready(function(){
+		//clear all height from iFrames
+		$("#webPage,#webPageYouTube,#webPageHtml").height($(window).height()-$("#professionalMenu div[data-role='header']").height()-4);
+		
 		reifaxMobile.validSession();
 		$('#renderHtml a[class*="ui-icon-carat-l"]').bind('click',function(){
 			var title	=	$('#renderHtml h1').html();
 			if('REIFAX - HELP'==title || 'REIFAX - LIVE SUPPORT'==title){
 				$('#webPageHtml').remove();
 				$('<iframe id="webPageHtml" class="iframeRender"></iframe>').insertBefore('#subPrincipalMenu');
+			}else{
+				$("#webPageHtml").contents().find("body").html('');
+			}
+			if(typeof window.document.getElementById("webPageHtml").contentWindow.loaded!='undefined'){
+				window.document.getElementById("webPageHtml").contentWindow.loaded=false;
 			}
 		});
 		$('#renderYouTube a[class*="ui-icon-carat-l"]').bind('click',function(){
-			$("#webPageYouTube").contents().find("body").html('');
+			$('#webPageYouTube').remove();
+			$('<iframe id="webPageYouTube" class="iframeRender"></iframe>').insertAfter('#renderYouTube div[class*="ui-content"]');
 		});
-		document.addEventListener("deviceready", onDR, false);
-
-		function onDR(){
-			document.addEventListener("backbutton", backKeyDown, true);
-		}
-
-		function backKeyDown() {
-			// do something here if you wish
-			alert('go back!');
-		}
 		window.addEventListener("message", function(event) {
 			console.debug(event);
 			switch(event.data.idFunction){
@@ -385,26 +382,35 @@
 						.trigger("click");
 					globals.globalFunction	=	event.data.idFunction;
 					$("#webPageYouTube")
-						.height($(window).height()-$("#professionalMenu div[data-role='header']").height()-7-43)
 						.attr("src",event.data.video);
 				break;
 			}
 		},false);
-		
+		$('#renderHtml').on('pageshow', function(event, ui) {
+			$.mobile.loading('show',{
+				text		:	'Loading please wait...!',
+				textVisible	:	true,
+				//theme: theme,
+				textonly	:	false
+				//html: html
+			});					
+		});		
 		$(".excecute").bind("click",function(e){
+			e.preventDefault();
 			var idFunction	=	$(this).data("excecute");
 			switch(idFunction){
 				case "professional":
+					var href	=	$(this).attr('href');
 					$("#webPage h1").html($(this).data("title"));
 					globals.globalFunction	=	idFunction;
+					$.mobile.changePage( href, { transition: "slidedown"});
 					if(globals.execFirstTime==0){
 						globals.execFirstTime	=	1;
 						$("#webPage")
-							.height($(window).height()-$("#professionalMenu div[data-role='header']").height()-7-43)
 							.attr("src",$(this).data("src"));
 					}
 				break;
-					/***************Begin Basic Search*********************/
+					//***************Begin Basic Search*********************/
 					case "searchByMap":
 						window.parent.document.getElementById("webPage").contentWindow.excecuteMobile(idFunction);
 					break;
@@ -414,14 +420,22 @@
 					case "xrayReport":
 						window.parent.document.getElementById("webPage").contentWindow.excecuteMobile(idFunction);
 					break;
-					/****************End Basic Search**********************/
-				/****************Html Out**********************/
+					//****************End Basic Search**********************/
+				//****************Html Out**********************/
 				case "htmlOut":
-					$("#webPageHtml").contents().find("body").html('');
-					$("#renderHtml h1").html($(this).data("title"));
+					var href	=	$(this).attr('href');
 					globals.globalFunction	=	idFunction;
+					$("#renderHtml h1").html($(this).data("title"));
+					var temp	=	setInterval(function(){
+						if(typeof window.document.getElementById("webPageHtml").contentWindow.loaded!='undefined'){
+							if(window.document.getElementById("webPageHtml").contentWindow.loaded==true){
+								clearInterval(temp);
+								$.mobile.loading("hide");
+							}
+						}
+					},500);
+					$.mobile.changePage( href, { transition: "slidedown"});
 					$("#webPageHtml")
-						.height($(window).height()-$("#professionalMenu div[data-role='header']").height()-7-43)
 						.attr("src",$(this).data("src"));
 				break;
 				case "htmlOutIn":
@@ -429,21 +443,19 @@
 					$("#renderHtml h1").html($(this).data("title"));
 					globals.globalFunction	=	idFunction;
 					$("#webPageHtml")
-						.height($(window).height()-$("#professionalMenu div[data-role='header']").height()-7-43)
 						.attr("src",$(this).data("src"));
 					$("#subPrincipalMenu .closeMenu").trigger('click');
 				break;
-				/****************LogOut**********************/
+				//****************LogOut**********************/
 				case "logOut":
 					reifaxMobile.logOut();
 				break;
-				/****************Forgot Password**********************/
+				//****************Forgot Password**********************/
 				case "forgotPassword":
 					$("#renderHtml h1").html($(this).data("title"));
 					$("#renderHtml a[class*='ui-icon-carat-l']").attr("href","#loginReifax");
 					globals.globalFunction	=	idFunction;
 					$("#webPageHtml")
-						.height($(window).height()-$("#professionalMenu div[data-role='header']").height()-7-43)
 						.attr("src",$(this).data("src"));
 				break;
 				case "externalApp":
