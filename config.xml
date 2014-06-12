@@ -40,7 +40,7 @@
     <icon src="includes/images/logoReifaxMobile72.png"   gap:platform="android"    gap:density="hdpi" />
     <icon src="includes/images/logoReifaxMobile96.png"   gap:platform="android"    gap:density="xhdpi" />
 
-	<!--gap:plugin name="com.boyvanderlaak.cordova.plugin.orientationchanger" version="0.1.1" /-->
+	<gap:plugin name="com.boyvanderlaak.cordova.plugin.orientationchanger" version="0.1.1" />
 	
 	<access origin="*" subdomains="true" />
 
