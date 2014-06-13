@@ -52,9 +52,7 @@ var reifaxMobile	=	{
 				$.mobile.loading("hide");
 			},
 			success		:	function (result){
-				console.log(result);
 				var results=result.split('^');
-				console.log(results[0]);
 				if(results[0]=='invalid'){
 					$("#both p")
 						.text('This sesion was closed as another became active.')
