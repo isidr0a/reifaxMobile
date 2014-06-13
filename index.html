@@ -350,9 +350,6 @@
 			.trigger("click");
 	}
 	$(document).ready(function(){
-		document.addEventListener("deviceready", function(){
-			alert("Entramos");
-		}, false);
 		
 		//clear all height from iFrames
 		$("#webPage,#webPageYouTube,#webPageHtml").height($(window).height()-$("#professionalMenu div[data-role='header']").height()-4);
@@ -501,5 +498,8 @@
 			}
 		});
 	});
+	document.addEventListener("deviceready", function(){
+		alert("Entramos");
+	}, false);
 </script>
 </html>
