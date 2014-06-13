@@ -44,12 +44,12 @@
 	}
 </style>
 <script>
+	document.addEventListener("deviceready", onDeviceReady, false);
 	function onDeviceReady() {
 		console.log('1');
 		window.plugins.orientationchanger.lockOrientation('landscape');
 		console.log(window.plugins.orientationchanger.getOrientation());
 	}
-	document.addEventListener("deviceready", onDeviceReady, false);
 	var globals	=	{
 		execFirstTime:	0,
 		globalFunction:	""
