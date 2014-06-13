@@ -501,7 +501,8 @@
 	});
 	document.addEventListener("deviceready", function(){
 		console.log("Entramos1");
-		alert("Entramos2")
+		alert("Entramos2");
+		alert(window.plugins.orientationchanger.getOrientation());
 	}, false);
 </script>
 </html>
