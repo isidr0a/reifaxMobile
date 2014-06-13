@@ -500,9 +500,8 @@
 		});
 	});
 	document.addEventListener("deviceready", function(){
-		console.log("Entramos1");
-		alert("Entramos2");
-		alert(window.plugins.orientationchanger.getOrientation());
+		if(WURFL.form_factor!="tablet")
+			window.plugins.orientationchanger.lockOrientation("portrait");
 	}, false);
 </script>
 </html>
