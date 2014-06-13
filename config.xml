@@ -42,6 +42,9 @@
     <icon src="includes/images/logoReifaxMobile96.png"   gap:platform="android"    gap:density="xhdpi" />
 
 	<gap:plugin name="com.boyvanderlaak.cordova.plugin.orientationchanger" version="0.1.1" />
+	<gap:plugin name="nl.x-services.plugins.insomnia" version="3.0" />
+    <gap:plugin name="nl.x-services.plugins.toast" version="1.0" />
+    <gap:plugin name="org.apache.cordova.device-motion" version="0.2.6" />
 	
 	<access origin="*" subdomains="true" />
 
