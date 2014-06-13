@@ -19,12 +19,8 @@
  
 	<content src="index.html" />
 
-	<!-- Preferences ->
-	<preference name="orientation" value="landscape" />
-	<!--preference name="stay-in-webview" value="true" /--> 
- 
-	<!--feature name="http://api.phonegap.com/1.0/device"/>
-	<feature name="http://api.phonegap.com/1.0/battery"/>
+	<feature name="http://api.phonegap.com/1.0/device"/>
+	<!--feature name="http://api.phonegap.com/1.0/battery"/>
 	<feature name="http://api.phonegap.com/1.0/camera"/>
 	<feature name="http://api.phonegap.com/1.0/contacts"/>
 	<feature name="http://api.phonegap.com/1.0/file"/>
@@ -32,6 +28,11 @@
 	<feature name="http://api.phonegap.com/1.0/media"/>
 	<feature name="http://api.phonegap.com/1.0/network"/>
 	<feature name="http://api.phonegap.com/1.0/notification"/-->
+ 
+	<!-- Preferences -->
+	<preference name="permissions" value="none"/>
+	<preference name="orientation" value="landscape" />
+	<!--preference name="stay-in-webview" value="true" /--> 
  
 	<!-- Define app icon for each platform. -->
     <icon src="includes/images/icon.png" />
