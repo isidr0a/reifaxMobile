@@ -44,7 +44,10 @@
 	}
 </style>
 <script>
-	window.plugins.orientationchanger.lockOrientation('landscape');
+	function onDeviceReady() {
+		alert(window.plugins.orientationchanger.getOrientation());
+	}
+	document.addEventListener("deviceready", onDeviceReady, false);
 	var globals	=	{
 		execFirstTime:	0,
 		globalFunction:	""
@@ -343,7 +346,6 @@
 			.trigger("click");
 	}
 	$(document).ready(function(){
-		console.debug(window.plugins.orientationchanger.getOrientation());
 		//clear all height from iFrames
 		$("#webPage,#webPageYouTube,#webPageHtml").height($(window).height()-$("#professionalMenu div[data-role='header']").height()-4);
 		
