@@ -20,10 +20,10 @@
 	<preference name="orientation" value="landscape" />
 	
 	<icon src="includes/images/icon.png" />
-    <icon src="includes/images/logoReifaxMobile36.png"   gap:platform="android"    gap:density="ldpi" />
-    <icon src="includes/images/logoReifaxMobile48.png"   gap:platform="android"    gap:density="mdpi" />
-    <icon src="includes/images/logoReifaxMobile72.png"   gap:platform="android"    gap:density="hdpi" />
-    <icon src="includes/images/logoReifaxMobile96.png"   gap:platform="android"    gap:density="xhdpi" />
+    <icon src="includes/images/logo-reifax-mobile36.png"   gap:platform="android"    gap:density="ldpi" />
+    <icon src="includes/images/logo-reifax-mobile48.png"   gap:platform="android"    gap:density="mdpi" />
+    <icon src="includes/images/logo-reifax-mobile72.png"   gap:platform="android"    gap:density="hdpi" />
+    <icon src="includes/images/logo-reifax-mobile96.png"   gap:platform="android"    gap:density="xhdpi" />
 
 	<gap:plugin name="com.boyvanderlaak.cordova.plugin.orientationchanger" version="0.1.1" />
 	<gap:plugin name="org.apache.cordova.device" />
