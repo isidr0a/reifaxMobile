@@ -343,6 +343,10 @@
 			.trigger("click");
 	}
 	$(document).ready(function(){
+		alert('2HOLA: '+navigator.userAgent);
+		alert('2BYE1: '+device.model);
+		alert('2BYE2: '+device.name);
+		alert('2COOL: '+WURFL.form_factor);
 		
 		//clear all height from iFrames
 		$("#webPage,#webPageYouTube,#webPageHtml").height($(window).height()-$("#professionalMenu div[data-role='header']").height()-4);
@@ -493,10 +497,11 @@
 	});
 	document.addEventListener("deviceready", function(){
 		alert('HOLA: '+navigator.userAgent);
-		alert('BYE: '+device.name);
+		alert('BYE1: '+device.model);
+		alert('BYE2: '+device.name);
 		alert('COOL: '+WURFL.form_factor);
-		if(WURFL.form_factor!="tablet")
-			window.plugins.orientationchanger.lockOrientation("portrait");
+		/*if(WURFL.form_factor!="tablet")
+			window.plugins.orientationchanger.lockOrientation("portrait");*/
 	}, false);
 </script>
 </html>
