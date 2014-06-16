@@ -45,12 +45,6 @@
 	}
 </style>
 <script type="text/javascript">
-	function onDeviceReady() {
-		/*console.log('1');
-		window.plugins.orientationchanger.lockOrientation('landscape');
-		console.log(window.plugins.orientationchanger.getOrientation());*/
-		alert('HOLA: '+navigator.userAgent);
-	}
 	var globals	=	{
 		execFirstTime:	0,
 		globalFunction:	""
@@ -498,6 +492,7 @@
 		});
 	});
 	document.addEventListener("deviceready", function(){
+		alert('HOLA: '+navigator.userAgent);
 		alert(WURFL.form_factor);
 		if(WURFL.form_factor!="tablet")
 			window.plugins.orientationchanger.lockOrientation("portrait");
