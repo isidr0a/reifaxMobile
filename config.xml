@@ -18,6 +18,8 @@
 	<content src="index.html" />
 
 	<preference name="orientation" value="landscape" />
+	<preference name="target-device" value="universal" />
+	<preference name="stay-in-webview" value="true" />
 	
 	<icon src="includes/images/icon.png" />
     <icon src="includes/images/logo-reifax-mobile36.png"   gap:platform="android"    gap:density="ldpi" />
