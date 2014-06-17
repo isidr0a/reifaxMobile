@@ -73,7 +73,7 @@
                     <input type="button" data-theme="b" id="forgot" value="Forgot your PassWord" class="excecute" onclick="window.location.href='#renderHtml'"
 						data-excecute="forgotPassword" data-src="http://test.reifax.com/register/forgotPassword.php" data-title="FORGOT YOUR PASSWORD">
                 </fieldset>
-            </form>                              
+            </form><div id="dump1"></div><div id="dump2"></div>
         </div>
 		<div id="both" data-role="popup" data-transition="slideup" data-theme="a" class="ui-content">
 			<p></p>
@@ -344,7 +344,8 @@
 			.trigger("click");
 	}
 	$(document).ready(function(){
-		alert('5COOL: '+WURFL.is_mobile);
+		$('#dump1').append(redump(WURFL));
+		$('#dump2').append(redump(device));
 		
 		//clear all height from iFrames
 		$("#webPage,#webPageYouTube,#webPageHtml").height($(window).height()-$("#professionalMenu div[data-role='header']").height()-4);
@@ -494,11 +495,66 @@
 		});
 	});
 	document.addEventListener("deviceready", function(){
-		alert('HOLA: '+navigator.userAgent);
-		alert('BYE1: '+device.model);
-		alert('BYE2: '+device.name);
 		/*if(WURFL.form_factor!="tablet")
 			window.plugins.orientationchanger.lockOrientation("portrait");*/
 	}, false);
+	function redump(thevar){
+		var dump=function(n,v)
+		{
+			var r='';
+			if (n)n+=' : ';
+			else n='';
+			var t=Object.prototype.toString.call(v);
+			t=t.substr(8,t.length-9);
+			switch(t)
+			{
+				case 'String':
+				case 'Date':
+					r+=n+t+' = "'+v.toString().replace('"','\\"')+'"';
+					break;
+				case 'Number':
+				case 'RegExp':
+				case 'Boolean':
+					r+=n+t+' = '+v;
+					break;
+				case 'Null':
+				case 'Undefined':
+					r+=n+t;
+					break;
+				case 'Array':
+					r+=n+'Array = [<ul style="list-style:none">';
+					for (c in v)
+					{
+						r+='<li>';
+						r+=dump('['+c+']',v[c])+',';
+						r+='</li>';
+					}
+					r+='</ul>]';
+					break;
+				case 'Object':
+					r+=n+'Object = {<ul style="list-style:none">';
+					for (c in v)
+					{
+						r+='<li>';
+						r+=dump('.'+c,v[c])+',';
+						r+='</li>';
+					}
+					r+='</ul>}'
+					break;
+				case 'Function':
+					r+=n+t+' = '+v.toString().substr(0,v.toString().indexOf('{'));
+					r+='{<ul style="list-style:none">';
+						r+='<li>Arguments: '+v.length+'</li>';
+					r+='</ul>}';
+					break;
+				default:
+					r+='>>'+t+'<<'+n;
+					break;
+			}
+			return r;
+		};
+		(typeof origname !== 'undefined')||(origname='');
+		return '<ul style="list-style:none"><li>'+dump(origname,thevar)+'</li></ul>';
+	}
 </script>
 </html>
