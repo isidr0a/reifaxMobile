@@ -27,6 +27,7 @@
 
 	<gap:plugin name="com.boyvanderlaak.cordova.plugin.orientationchanger" version="0.1.1" />
 	<gap:plugin name="org.apache.cordova.device" />
+	<gap:plugin name="org.apache.cordova.InAppBrowser" />
 	
 	<access origin="*" subdomains="true" />
 
