@@ -27,7 +27,7 @@
     <icon src="includes/images/logo-reifax-mobile72.png"   gap:platform="android"    gap:density="hdpi" />
     <icon src="includes/images/logo-reifax-mobile96.png"   gap:platform="android"    gap:density="xhdpi" />
 
-	<gap:plugin name="com.boyvanderlaak.cordova.plugin.orientationchanger" version="0.1.1" />
+	<gap:plugin name="com.boyvanderlaak.cordova.plugin.orientationchanger" />
 	<gap:plugin name="org.apache.cordova.device" />
 	<gap:plugin name="org.apache.cordova.InAppBrowser" />
 	
