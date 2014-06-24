@@ -48,11 +48,13 @@
 <script type="text/javascript">
 	var globals	=	{
 		execFirstTime:	0,
-		globalFunction:	""
+		globalFunction:	"",
+		orientation:	true
 	}
 	function _onDeviceReady (){
 		if (WURFL.form_factor != 'Tablet') {
 			window.plugins.orientationchanger.lockOrientation('portrait');
+			globals.orientation	=	false;
 		}
 	}
 </script>
@@ -419,19 +421,20 @@
 						globals.execFirstTime	=	1;
 						$("#webPage")
 							.attr("src",$(this).data("src"));
+						window.parent.document.getElementById("webPage").contentWindow.buyersPro	=	globals.orientation;
 					}
 				break;
-					//***************Begin Basic Search*********************/
-					case "searchByMap":
-						window.parent.document.getElementById("webPage").contentWindow.excecuteMobile(idFunction);
-					break;
-					case "managerSearch":
-						window.parent.document.getElementById("webPage").contentWindow.excecuteMobile(idFunction);
-					break;
-					case "xrayReport":
-						window.parent.document.getElementById("webPage").contentWindow.excecuteMobile(idFunction);
-					break;
-					//****************End Basic Search**********************/
+				//***************Begin Basic Search*********************/
+				case "searchByMap":
+					window.parent.document.getElementById("webPage").contentWindow.excecuteMobile(idFunction);
+				break;
+				case "managerSearch":
+					window.parent.document.getElementById("webPage").contentWindow.excecuteMobile(idFunction);
+				break;
+				case "xrayReport":
+					window.parent.document.getElementById("webPage").contentWindow.excecuteMobile(idFunction);
+				break;
+				//****************End Basic Search**********************/
 				//****************Html Out**********************/
 				case "htmlOut":
 					var href	=	$(this).attr('href');
