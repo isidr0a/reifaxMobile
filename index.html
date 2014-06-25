@@ -5,9 +5,9 @@
 <script type='text/javascript' src='includes/js/lib/jqueryMobile/jquery.mobile-1.4.2.min.js'></script>
 <script type='text/javascript' src='cordova.js'></script>
 <!--script type='text/javascript' src='includes/js/lib/wurfl/wurfl.js'></script-->
-<script type='text/javascript' src='//wurfl.io/wurfl.js'></script>
 <script type='text/javascript' src='resources/js/login.js'></script>
 <script type='text/javascript' src='resources/js/settings.js'></script>
+<script type='text/javascript' src='http://wurfl.io/wurfl.js'></script>
 <!-- Head of ReiFax Website -->
 <style>
 	.contentPrincipal	{
@@ -48,7 +48,14 @@
 <script type="text/javascript">
 	var globals	=	{
 		execFirstTime:	0,
-		globalFunction:	""
+		globalFunction:	"",
+		orientation:	true
+	}
+	function _onDeviceReady (){
+		if (WURFL.form_factor != 'Tablet') {
+			window.plugins.orientationchanger.lockOrientation('portrait');
+			globals.orientation	=	false;
+		}
 	}
 </script>
 <body>
@@ -344,8 +351,8 @@
 			.trigger("click");
 	}
 	$(document).ready(function(){
-		$('#dump1').append(redump(WURFL));
-		$('#dump2').append(redump(device));
+		//$('#dump1').append(redump(WURFL));
+		//$('#dump2').append(redump(device));
 		
 		//clear all height from iFrames
 		$("#webPage,#webPageYouTube,#webPageHtml").height($(window).height()-$("#professionalMenu div[data-role='header']").height()-4);
@@ -494,10 +501,6 @@
 			}
 		});
 	});
-	document.addEventListener("deviceready", function(){
-		/*if(WURFL.form_factor!="tablet")
-			window.plugins.orientationchanger.lockOrientation("portrait");*/
-	}, false);
 	function redump(thevar){
 		var dump=function(n,v)
 		{
@@ -556,5 +559,6 @@
 		(typeof origname !== 'undefined')||(origname='');
 		return '<ul style="list-style:none"><li>'+dump(origname,thevar)+'</li></ul>';
 	}
+	document.addEventListener("deviceReady",_onDeviceReady, false);
 </script>
 </html>
