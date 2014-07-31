@@ -6,6 +6,7 @@
 <script type='text/javascript' src='cordova.js'></script>
 <!--script type='text/javascript' src='includes/js/lib/wurfl/wurfl.js'></script-->
 <script type='text/javascript' src='resources/js/login.js'></script>
+<script type='text/javascript' src='resources/js/jquery.cookie.js'></script>
 <script type='text/javascript' src='resources/js/settings.js'></script>
 <script type='text/javascript' src='http://wurfl.io/wurfl.js'></script>
 <!-- Head of ReiFax Website -->
@@ -52,7 +53,7 @@
 		orientation:	true
 	}
 	function _onDeviceReady (){
-		if (WURFL.form_factor != 'Tablet') {
+		if (WURFL.form_factor != 'Tablet' || $.cookie("datos_usr['USERID']")==2544) {
 			window.plugins.orientationchanger.lockOrientation('portrait');
 			globals.orientation	=	false;
 		}
