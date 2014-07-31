@@ -34,6 +34,7 @@ var reifaxMobile	=	{
 		});
 	},
 	validSession:	function(){
+		console.log('verificando session');
 		$.ajax({
 			url: 'http://test.reifax.com/properties_validSess.php',
 			type		:	'post',                   
@@ -52,6 +53,7 @@ var reifaxMobile	=	{
 				$.mobile.loading("hide");
 			},
 			success		:	function (result){
+				console.log(result);
 				var results=result.split('^');
 				if(results[0]=='invalid'){
 					$("#both p")
