@@ -53,7 +53,7 @@
 		orientation:	true
 	}
 	function _onDeviceReady (){
-		if (WURFL.form_factor != 'Tablet' || $.cookie("datos_usr['USERID']")==2544) {
+		if (WURFL.form_factor != 'Tablet') {
 			window.plugins.orientationchanger.lockOrientation('portrait');
 			globals.orientation	=	false;
 		}
