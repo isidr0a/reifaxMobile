@@ -1,36 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<widget xmlns   = "http://www.w3.org/ns/widgets"
- xmlns:gap   = "http://phonegap.com/ns/1.0"
- id          = "com.reifax.test"
- versionCode = "10" 
- version     = "1.0.0" >
- 
-	<name>Reifax Mobile</name>
-
-	<description>
-		An example for phonegap build docs. 
-	</description> 
-
-	<author href="http://test.reifax.com" email="jesusemarquezz@gmail.com">
-		Jesus Marquez
-	</author>
- 
-	<content src="index.html" />
-
-	<preference name="target-device" value="universal" />
-	<preference name="stay-in-webview" value="true" />
-	
-	<icon src="includes/images/icon.png" />
-    <icon src="includes/images/logo-reifax-mobile36.png"   gap:platform="android"    gap:density="ldpi" />
-    <icon src="includes/images/logo-reifax-mobile48.png"   gap:platform="android"    gap:density="mdpi" />
-    <icon src="includes/images/logo-reifax-mobile72.png"   gap:platform="android"    gap:density="hdpi" />
-    <icon src="includes/images/logo-reifax-mobile96.png"   gap:platform="android"    gap:density="xhdpi" />
-
-	<gap:plugin name="com.boyvanderlaak.cordova.plugin.orientationchanger" />
-	<gap:plugin name="org.apache.cordova.device" />
-	<gap:plugin name="org.apache.cordova.InAppBrowser" />
-	
-	
-	<access origin="*" subdomains="true" />
-
-</widget>
+<?xml version="1.0" encoding="UTF-8"?>	<widget xmlns = "http://www.w3.org/ns/widgets"		xmlns:gap = "http://phonegap.com/ns/1.0"		id        = "com.reifax.test"		versionCode="10"		version   = "1.0.0">		<name>Reifax Mobile</name>		<description>An example for phonegap build docs.		</description>		<author href="http://test.reifax.com" email="jesusemarquezz@gmail.com">Jesus Marquez		</author>		<preference name="phonegap-version" value="3.3.0" />		<preference name="fullscreen" value="false" />		<preference name="target-device" value="universal" />		<preference name="webviewbounce" value="true" />		<preference name="prerendered-icon" value="false" />		<preference name="stay-in-webview" value="true" />		<preference name="ios-statusbarstyle" value="default" />		<preference name="detect-data-types" value="true" />		<preference name="exit-on-suspend" value="false" />		<preference name="show-splash-screen-spinner" value="true" />		<preference name="auto-hide-splash-screen" value="true" />		<preference name="EnableViewportScale" value="false" />		<preference name="MediaPlaybackRequiresUserAction" value="false" />		<preference name="AllowInlineMediaPlayback" value="false" />		<preference name="BackupWebStorage" value="cloud" />		<preference name="TopActivityIndicator" value="gray" />		<preference name="KeyboardDisplayRequiresUserAction" value="true" />		<preference name="HideKeyboardFormAccessoryBar" value="false" />		<preference name="SuppressesIncrementalRendering" value="false" />		<preference name="android-minSdkVersion" value="7" />		<preference name="android-installLocation" value="internalOnly" />		<preference name="SplashScreenDelay" value="5000" />		<preference name="ErrorUrl" value=""/>		<preference name="BackgroundColor" value=""/>		<preference name="KeepRunning" value="true"/>		<preference name="DisallowOverscroll" value="false"/>		<preference name="LoadingDialog" value=","/> 		<preference name="LoadUrlTimeoutValue" value="20000" />		<preference name="disable-cursor" value="false" />		<gap:platform name="android" />		<feature name="http://api.phonegap.com/1.0/battery"/>		<feature name="http://api.phonegap.com/1.0/camera"/>		<feature name="http://api.phonegap.com/1.0/contacts"/>		<feature name="http://api.phonegap.com/1.0/file"/>		<feature name="http://api.phonegap.com/1.0/geolocation"/>		<feature name="http://api.phonegap.com/1.0/network"/>		<feature name="http://api.phonegap.com/1.0/notification"/>		<gap:plugin name="org.apache.cordova.device"  />		<icon src="includes/images/logo-reifax-mobile36.png" gap:platform="android" gap:density="ldpi" />		<icon src="includes/images/logo-reifax-mobile48.png" gap:platform="android" gap:density="mdpi" />		<icon src="includes/images/logo-reifax-mobile72.png" gap:platform="android" gap:density="hdpi" />		<icon src="includes/images/logo-reifax-mobile96.png" gap:platform="android" gap:density="xhdpi" />		<icon src="includes/images/icon.png" />		<gap:splash src="includes/images/splash-240.png" gap:platform="android" gap:density="ldpi" />		<gap:splash src="includes/images/splash-320.png" gap:platform="android" gap:density="mdpi" />		<gap:splash src="includes/images/splash-480.png" gap:platform="android" gap:density="hdpi" />		<gap:splash src="includes/images/splash-720.png" gap:platform="android" gap:density="xhdpi" />		<access origin="*" subdomains="true"  />		<gap:plugin name="com.boyvanderlaak.cordova.plugin.orientationchanger"  />	</widget>
